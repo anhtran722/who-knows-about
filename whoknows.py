@@ -23,9 +23,9 @@ import subprocess
 import sys
 
 # colors in console
-GREEN = '\033[92m'
-YELLOW = '\033[93m'
-END = '\033[0m'
+GREEN = "\033[92m"
+YELLOW = "\033[93m"
+END = "\033[0m"
 
 def color(s, color):
   return color + s + END if color else s
@@ -118,7 +118,7 @@ def printRelevance(relevance):
 
 if __name__ == "__main__":
   data = json.loads(getGitLog())
-  thing = raw_input('Who knows about: ')
+  thing = raw_input("Who knows about: ")
   committers = whoKnowsAbout(thing, data)
   relevance = getMostRelevant(committers, 3)
   printRelevance(relevance)
