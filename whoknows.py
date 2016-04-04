@@ -117,9 +117,7 @@ def printRelevance(relevance):
   print("\n")
 
 if __name__ == "__main__":
-  data = json.loads(getGitLog())
-  thing = raw_input("Who knows about: ")
-  committers = whoKnowsAbout(thing, data)
+  committers = whoKnowsAbout(" ".join(sys.argv[1:]), json.loads(getGitLog()))
   relevance = getMostRelevant(committers, 3)
   printRelevance(relevance)
   sys.exit(0)
